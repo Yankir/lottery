@@ -85,7 +85,7 @@ void mergeSort(int array[] , int left , int right)
 
 int main()
 {
-	int array1[] = {6,5,4,3,2,1} , array2[] = {6,5,4,3,2,1} , array3[] = {6,5,4,3,2,1};
+	int array1[] = {6,3,4,2,5,1} , array2[] = {6,3,4,2,5,1} , array3[] = {6,3,4,2,5,1};
 
 	selectionSort(array1);
 	bubbleSort(array2);
