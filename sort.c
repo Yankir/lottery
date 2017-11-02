@@ -31,7 +31,7 @@ void selectionSort(int array[])
 void bubbleSort(int array[])
 {
 	int comp = 0 , swap = 0;
-	for(int i = size ; i >= 2 ; --i)
+	for(int i = size ; i >= 2 ; i--)
 	{
 		for(int j = 1 ; j < i ; j++)
 		{
@@ -61,7 +61,7 @@ void mergeSort(int array[] , int left , int right)
 		mergeSort(array , middle+1 , right);
 
 		//intercalando
-		for(i = middle+1 ; i > left ; --i)
+		for(i = middle+1 ; i > left ; i--)
 		{
 			arrayAux[i-1] = array[i-1];
 			swap++;
