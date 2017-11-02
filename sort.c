@@ -8,14 +8,14 @@ int comp = 0 , swap = 0;
 void selectionSort(int array[])
 {
 	int comp = 0 , swap = 0;
-	for(int i = 1 ; i < size ; ++i)
+	for(int i = 1 ; i < size ; i++)
 	{
 		int min = i;
-		for(int j = i+1 ; j <= size ; ++j)
+		for(int j = i+1 ; j <= size ; j++)
 		{
 			if(array[j] < array[min])
 				min = j;
-			++comp;
+			comp++;
 		}
 		int aux = array[i];
 		array[i] = array[min];
@@ -33,7 +33,7 @@ void bubbleSort(int array[])
 	int comp = 0 , swap = 0;
 	for(int i = size ; i >= 2 ; --i)
 	{
-		for(int j = 1 ; j < i ; ++j)
+		for(int j = 1 ; j < i ; j++)
 		{
 			if(array[j] > array[j+1])
 			{
@@ -42,7 +42,7 @@ void bubbleSort(int array[])
 				array[j+1] = aux;
 				swap += 3;
 			}
-			++comp;
+			comp++;
 		}
 	}
 
@@ -64,21 +64,21 @@ void mergeSort(int array[] , int left , int right)
 		for(i = middle+1 ; i > left ; --i)
 		{
 			arrayAux[i-1] = array[i-1];
-			++swap;
+			swap++;
 		}
-		for(j = middle ; j < right ; ++j)
+		for(j = middle ; j < right ; j++)
 		{
 			arrayAux[right+middle-j] = array[j+1];
-			++swap;
+			swap++;
 		}
-		for(k = left ; k <= right ; ++k)
+		for(k = left ; k <= right ; k++)
 		{
 			if(arrayAux[i] < arrayAux[j])
 				array[k] = arrayAux[i++];
 			else
 				array[k] = arrayAux[j--];
-			++comp;
-			++swap;
+			comp++;
+			swap++;
 		}
 	}
 }
@@ -94,7 +94,7 @@ int main()
 	printf("Número de comparações: %d\n" , comp);
 	printf("Número de troca de elementos: %d\n" , swap);
 
-	for(int i = 1 ; i < size+1 ; ++i)
+	for(int i = 1 ; i < size+1 ; i++)
 		printf("%d " , array3[i]);
 	puts("");
 }
