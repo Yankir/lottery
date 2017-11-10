@@ -5,21 +5,6 @@
 //variaveis globais para mergeSort calcular o numero de trocas e comparacoes dos vetores
 int comp = 0 , swap = 0;
 
-//funcao para printar o array desejado
-void printArray(int array[] , int size)
-{
-	for(int i=1 , j=1 ; i<=size ; i++ , j++)
-	{
-		if(j > 20)
-		{
-			puts("|");
-			j = 1;
-		}
-		printf("| %d " , array[i]);
-	}
-	puts("|");
-}
-
 //escolha de 5 numeros do jogador
 void numChoice(int *n1, int *n2, int *n3, int *n4, int *n5 , int max)
 {
@@ -181,6 +166,21 @@ int binarySearch(int value , int array[] , int size)
 		return 0;
 }
 
+//funcao para printar o array desejado
+void printArray(int array[] , int size)
+{
+	for(int i=1 , j=1 ; i<=size ; i++ , j++)
+	{
+		if(j > 20)
+		{
+			puts("|");
+			j = 1;
+		}
+		printf("| %d " , array[i]);
+	}
+	puts("|");
+}
+
 int main()
 {
 	char choice;
@@ -253,6 +253,14 @@ int main()
 			count++;
 		if(binarySearch(n5,arrayCopy,size))
 			count++;
+		puts("");
+
+		//printar array
+		puts("Printar Vetor? (s/n)");
+		scanf(" %c" , &choice);
+		puts("");
+		if(choice == 's')
+			printArray(arrayCopy,size);
 		puts("");
 
 		//contar comparacoes nas buscas
