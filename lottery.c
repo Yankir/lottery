@@ -255,17 +255,18 @@ int main()
 			count++;
 		puts("");
 
+		//contar comparacoes nas buscas
+		printf("Acertou %d dos 5 números\n" , count);
+
 		//printar array
-		puts("Printar Vetor? (s/n)");
+		puts("Printar Vetor Ordenado? (s/n)");
 		scanf(" %c" , &choice);
 		puts("");
 		if(choice == 's')
 			printArray(arrayCopy,size);
 		puts("");
 
-		//contar comparacoes nas buscas
-		printf("Acertou %d dos 5 números\n" , count);
-		puts("Jogar denovo? (s/n)");
+		puts("Jogar de novo? (s/n)");
 		scanf(" %c" , &choice);
 	}
 	while((choice == 's')||(choice == 'S'));
