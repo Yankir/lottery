@@ -299,6 +299,9 @@ int main()
 
 		puts("Jogar de novo? (s/n)");
 		scanf(" %c" , &choice);
+
+		comp = 0;
+		swap = 0;
 	}
 	while((choice == 's')||(choice == 'S'));
 }
