@@ -10,38 +10,62 @@ void numChoice(int *n1, int *n2, int *n3, int *n4, int *n5 , int max)
 {
 	printf("\nDigite 5 números de 1 a %d\n" , max);
 
+	int invalid = 0;
 	do
 	{
+		if(invalid)
+			puts("Número incorreto/repetido");
 		printf("  Número 1:\n");
 		scanf("%d" , n1);
+		invalid = 1;
 	}
 	while((*n1 < 1)||(*n1 > max));
 	puts("");
+
+	invalid = 0;
 	do
 	{
+		if(invalid)
+			puts("Número incorreto/repetido");
 		printf("  Número 2:\n");
 		scanf("%d" , n2);
+		invalid = 1;
 	}
 	while((*n2 < 1)||(*n2 > max)||(*n2 == *n1));
 	puts("");
+
+	invalid = 0;
 	do
 	{
+		if(invalid)
+			puts("Número incorreto/repetido");
 		printf("  Número 3:\n");
 		scanf("%d" , n3);
+		invalid = 1;
 	}
 	while((*n3 < 1)||(*n3 > max)||(*n3 == *n1)||(*n3 == *n2));
 	puts("");
+
+	invalid = 0;
 	do
 	{
+		if(invalid)
+			puts("Número incorreto/repetido");
 		printf("  Número 4:\n");
 		scanf("%d" , n4);
+		invalid = 1;
 	}
 	while((*n4 < 1)||(*n4 > max)||(*n4 == *n1)||(*n4 == *n2)||(*n4 == *n3));
 	puts("");
+
+	invalid = 0;
 	do
 	{
+		if(invalid)
+			puts("Número incorreto/repetido");
 		printf("  Número 5:\n");
 		scanf("%d" , n5);
+		invalid = 1;
 	}
 	while((*n5 < 1)||(*n5 > max)||(*n5 == *n1)||(*n5 == *n2)||(*n5 == *n3)||(*n5 == *n4));
 	puts("");
@@ -188,9 +212,16 @@ int main()
 	{
 		system("clear");
 		//lendo parametros
-		int size , max;
-		puts("Digite o tamanho do vetor e o valor máximo:");
-		scanf("%d %d" , &size,&max);
+		int size , max , invalid = 0;
+		do
+		{
+			if(invalid)
+				puts("Tamanho e valor máximo não podem ser menores que 5");
+			puts("Digite o tamanho do vetor e o valor máximo:");
+			scanf("%d %d" , &size,&max);
+			invalid = 1;
+		}
+		while((size < 5)||(max < 5));
 
 		//criando vetor aleatorio
 		int *array;
